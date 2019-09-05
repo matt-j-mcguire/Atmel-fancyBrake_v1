@@ -1,0 +1,78 @@
+    _delay_ms(10);
+    printByte(inx);
+    printString("  ");
+    printBinaryByte(PINC);
+    printString("  ");
+    printBinaryByte(PORTC);
+    printString("  ");
+    printBinaryByte(DDRC);
+    transmitByte(10);
+
+
+
+    if (isBreaking()) //if (!l_value(BRK_SW)) //break pressed
+    {
+      // Off(outer[11 - s]);
+      // s = ((s + 1) % 12);
+      // On(outer[11 - s]);
+
+      // Off_ar(4,inner);
+      // last = 0;
+      // timer1B_reset();
+      clear_all();
+      //r=0;
+      sync();
+
+      // _delay_ms(50);
+    }
+    else //no break
+    {
+
+      // On(inner[r]);
+      // r = ((r + 1) % 4);
+      // Off(inner[r]);
+
+      // Off(outer[s]);
+      // s = ((s + 1) % 12);
+      // On(outer[s]);
+      static int r = 0;
+      static uint32_t last = 0;
+      if (timer1B_past(last))
+      {
+        r++;
+        last = timer1B_next(100);
+      }
+
+      r & 1 ? On(L1) : Off(L1);
+      r & 2 ? On(L2) : Off(L2);
+      r & 4 ? On(L3) : Off(L3);
+      r & 8 ? On(L4) : Off(L4);
+      r & 16 ? On(L5) : Off(L5);
+      r & 32 ? On(L6) : Off(L6);
+      r & 64 ? On(L7) : Off(L7);
+      r & 128 ? On(L8) : Off(L8);
+      r & 256 ? On(L9) : Off(L9);
+      r & 512 ? On(L10) : Off(L10);
+      r & 1024 ? On(L11) : Off(L11);
+      r & 2048 ? On(L12) : Off(L12);
+      r & 4096 ? Off(L1314) : On(L1314);
+      r & 8192 ? Off(L1516) : On(L1516);
+      r & 16384 ? Off(L1718) : On(L1718);
+      r & 32768 ? Off(L1920) : On(L1920);
+
+      // if (v > last + 1000)
+      // {
+      //   if (l_value(L1314))
+      //     Off(L1314);
+      //   else
+      //     On(L1314);
+      //   last = v;
+      // }
+
+      sync();
+      //_delay_ms(125);
+    }
+
+    // printBinaryByte(PINC);
+    // transmitByte(10);
+  }

@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "io.h": "c",
+        "iom168p.h": "c",
+        "delay.h": "c",
+        "stdarg.h": "c",
+        "setbaud.h": "c",
+        "wdt.h": "c"
+    }
+}

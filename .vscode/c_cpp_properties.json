@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "name": "AVR",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "C:\\WinAVR-20100110\\avr\\include",
+                    "C:\\WinAVR-20100110\\avr\\include\\avr",
+                    "C:\\WinAVR-20100110\\avr\\include\\compat",
+                    "C:\\WinAVR-20100110\\avr\\include\\util",
+                    "C:\\WinAVR-20100110\\AVR-Programming-Library"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "includePath": [
+                    "${workspaceFolder}",
+                    "C:\\WinAVR-20100110\\avr\\include",
+                    "C:\\WinAVR-20100110\\avr\\include\\avr",
+                    "C:\\WinAVR-20100110\\avr\\include\\compat",
+                    "C:\\WinAVR-20100110\\avr\\include\\util",
+                    "C:\\WinAVR-20100110\\AVR-Programming-Library"
+                ],
+                "defines": [
+                    "_DEBUG",
+                    "UNICODE",
+                    "_UNICODE"
+                ],
+
+                "cStandard": "c11",
+                "cppStandard": "c++17",   
+                "intelliSenseMode": "msvc-x64"
+            }
+        }
+    ],
+    "version": 4
+}
